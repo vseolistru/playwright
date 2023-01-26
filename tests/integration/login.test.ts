@@ -5,10 +5,17 @@ test('Login test demo', async () =>{
         //{headless : false}
         const browser = await firefox.launch({headless : true});
         const context = await browser.newContext();
+
+        //and also we can create new tab in browser and also get instance of new browser
+        //const browser = await chromium.launch({headless : true});
+        //const context = await browser.newContext();
+        //const page1 = await newContext.newPage();
+        //await page1.goto('http://192.168.1.30:3000/')
+        //we get new tab with navigate to same address
+
         const page = await context.newPage();
         await page.goto('http://192.168.1.30:3000/')
-        await page.hover('//header/ul/li[2]')
-        await page.click('text=Login * Register')
+        await page.click('//header/ul/li[2]')
         await page.getByPlaceholder('Email').fill('vknseo@gmail.com')
         await page.getByPlaceholder('Password').fill('!qw2Er4Ty6')
         await page.click('//div[@class = "row"]/button')
