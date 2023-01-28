@@ -12,13 +12,20 @@ import { devices } from '@playwright/test';
  */
 const config: PlaywrightTestConfig = {
     testMatch: [
-               // '/tests/integration/login.test.ts', 
-                'tests/lambdaAlert.test.ts'
+                //'tests/integration/login.test.ts', 
+                //'tests/lambdaAlert.test.ts',
+                //'tests/select.test.ts',
+                //'iframes.test.ts',
+                //'window.test.ts',
+                'calendar.test.ts',
             ],
     use: {
         headless: false,
-        screenshot: "only-on-failure",
-        video:"retain-on-failure"
+        screenshot: "on",
+        video:"retain-on-failure",              
+        launchOptions: {
+            //slowMo: 1000
+        }
     },
     retries: 0,
     reporter : [["dot"], ["json", {outputFile: 'jsonReports/jsonReport.json'}],
