@@ -1,4 +1,6 @@
-import {test, chromium, firefox, expect, type Page} from '@playwright/test';
+import {test, chromium, firefox, expect, } from '@playwright/test';
+import LoginPage from '../../pages/loginPage';
+import { testFixture } from '../../fixture/my_fixture';
 
 
 test('Login test demo', async ({page}) =>{
@@ -66,6 +68,20 @@ test('Login test demo', async ({page}) =>{
         // await expect(page1.locator('//label[2]')).toContainText('assw')
 
 })
+
+test ("loginPage", async ({ page }) => {
+        await page.goto('http://192.168.1.30:3000/');
+        //locate & click login
+        await page.click('//header/ul/li[2]');
+        const login = new LoginPage(page)
+        await login.email('vknseo@gmail.com');
+        await login.enterPassword('!qw2Er4Ty6');
+        await login.clickLoginButton();
+
+        await page.waitForTimeout(2000);
+})
+
+
 
 
 // test('Find and navigate to login page', async (page) =>{
