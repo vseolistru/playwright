@@ -1,4 +1,4 @@
-interface PageDate {
+interface PageData {
     hidenTestingBlocks: number[];
     assertTestingBlocks: string[];
 
@@ -10,11 +10,11 @@ interface PageDate {
     assertToolsBlocks: string[];
 }
 
-type TestingPageDate = Pick <PageDate, 'hidenTestingBlocks' |'assertTestingBlocks'>
-type DevPageDate = Pick <PageDate, 'hiddenDevBlocks' | 'assertDevBlocks'>
-type ToolPageDate = Pick <PageDate, 'locatorsForHiddenBlocks'|'hiddenToolsBlocks' | 'assertToolsBlocks'>
+type TestingPageData = Pick <PageData, 'hidenTestingBlocks' |'assertTestingBlocks'>
+type DevPageData = Pick <PageData, 'hiddenDevBlocks' | 'assertDevBlocks'>
+type ToolPageData = Pick <PageData, 'locatorsForHiddenBlocks'|'hiddenToolsBlocks' | 'assertToolsBlocks'>
 
-export const TestingPage: TestingPageDate = {
+export const TestingPage: TestingPageData = {
     hidenTestingBlocks:[2,3], 
     assertTestingBlocks: [
         'Отличным инструментом тестирования',
@@ -22,7 +22,7 @@ export const TestingPage: TestingPageDate = {
     ]
 }
 
-export const DevPage: DevPageDate = {
+export const DevPage: DevPageData = {
     hiddenDevBlocks:[2,3,4], 
     assertDevBlocks: [
         'Да безусловно, самым популярным решением тут является SQL-server',
@@ -31,7 +31,7 @@ export const DevPage: DevPageDate = {
     ]
 }
 
-export const ToolPage: ToolPageDate = {
+export const ToolPage: ToolPageData = {
     locatorsForHiddenBlocks: [2,3,4,5],
     hiddenToolsBlocks: [1,2,3,4],
     assertToolsBlocks: [
