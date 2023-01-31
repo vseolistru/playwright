@@ -1,6 +1,5 @@
 import {test, chromium, firefox, expect, } from '@playwright/test';
 import LoginPage from '../../pages/loginPage';
-import { testFixture } from '../../fixture/my_fixture';
 
 
 test('Login test demo', async ({page}) =>{

@@ -1,2 +1,3 @@
 `npm init playwright@latest`
 `npx playwright test`
+`npx playwright codegen` - для автозаписи теста с помощью браузера

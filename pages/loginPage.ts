@@ -1,32 +1,24 @@
 import { Page } from "@playwright/test";
 
-interface User {
-    email: string;
-    password: string;
 
-}
+export default class LoginPage {    
 
-export default class LoginPage {
-    
+    constructor(public page: Page) { }
 
-    constructor(public page: Page) {
-        
-    }
     async email(email: string) {        
         await this.page.locator("input[type='email']")
-            .type(email);
+            .fill(email);
     }
 
     async enterPassword(password: string) {        
         await this.page.locator("input[type='password']")
-            .type(password);
+            .fill(password);
     }
 
     async clickLoginButton() {
         await this.page.locator("button[type='submit']")
            .click();
     }
-
 }
 
 
