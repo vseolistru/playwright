@@ -161,7 +161,7 @@ export class PortfolioHelper {
         await this.switchToolsBlocks(locatorsForHiddenBlocks, hidenBlocks, assertBlocks);    
 
     }
-
+    //switcher toolsPage
     async switchToolsBlocks (locatorsForHiddenBlocks: number[], hidenBlocks: number[], assertBlocks: string[]) {
         for (let i = 0; i < hidenBlocks.length; i++) {
             await this.page.click (
@@ -174,6 +174,4 @@ export class PortfolioHelper {
                 .toContainText(assertBlocks[i])
         }  
     }
-
-
 }

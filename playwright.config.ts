@@ -36,7 +36,8 @@ const config: PlaywrightTestConfig = {
                 //'calendar.test.ts',
                 //'upload.test.ts',
                 //'tests/integration/loginRef.test.ts',
-                'tests/portfolio.test.ts'
+                //'tests/portfolio.test.ts',
+                'tests/api-tests/apiTest.test.ts'
             ],
     use: {
         headless: false,
@@ -47,8 +48,11 @@ const config: PlaywrightTestConfig = {
         }
     },
     retries: 0,
-    reporter : [["dot"], ["json", {outputFile: 'jsonReports/jsonReport.json'}],
-    ["html", {open: "never"}]]
+    reporter : [
+        ["dot"], ["json", {outputFile: 'jsonReports/jsonReport.json'}],
+        ["html", {open: "never"}],
+        //["line"], ["allure-playwright"]
+    ]
 };
 
 export default config;

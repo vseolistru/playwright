@@ -9,6 +9,7 @@ import {
     ToolPage
  } from '../portfolio/portfolioFixture';
 
+ 
 test('Check hiden blocks',async ({ page }) => {
     const checkSidebar = new PortfolioHelper(page); 
     const { hidenTestingBlocks, assertTestingBlocks } = TestingPage;
