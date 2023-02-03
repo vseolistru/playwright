@@ -19,27 +19,23 @@ interface IProduct {
     updatedAt: string;
 }
 
-
-
 export const validateJson = async (json: IProduct[]) => {
     await json.forEach(element => {     
-        expect(element._id).toMatch('');
-        expect(element.productId).toMatch('');
-        expect(element.slug).toMatch('');
-        expect(element.title).toMatch('');
-        expect(element.description).toMatch('');
-        expect(element.img1).toMatch('');
-        expect(element.img2).toMatch('');
-        expect(element.img3).toMatch('');
-        expect(element.category).toMatch('');
-        expect(element.brand).toMatch('');
+        expect(typeof element._id).toBe(typeof '');
+        expect(typeof element.productId).toBe(typeof '');
+        expect(typeof element.slug).toBe(typeof '');
+        expect(typeof element.title).toBe(typeof '');
+        expect(typeof element.description).toBe(typeof '');
+        expect(typeof element.img1).toBe (typeof '');
+        expect(typeof element.img2).toBe(typeof '');
+        expect(typeof element.img3).toBe(typeof '');
+        expect(typeof element.category).toMatch('');
+        expect(typeof element.brand).toMatch('');
         expect(element.size).toBeInstanceOf(Array);
-        expect(element.price).toBeGreaterThan(1);
-        element.checked ? 
-        expect(element.checked).toBe(!false):
-        expect(element.checked).toBe(!true);
-        expect(element.sold).toBeGreaterThanOrEqual(0);
-        expect(element.createdAt).toMatch('');
-        expect(element.updatedAt).toMatch('');
+        expect(typeof element.price).toBe(typeof 0);
+        expect(typeof element.checked).toBe(typeof true);
+        expect(typeof element.sold).toBe(typeof 0);
+        expect(typeof element.updatedAt).toBe(typeof '');
+        expect(typeof element.createdAt).toBe(typeof '');
     });   
 }

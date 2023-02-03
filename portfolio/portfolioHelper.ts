@@ -18,7 +18,7 @@ export class PortfolioHelper {
     constructor(public page : Page) {}
         //validate sidebar elements
     async validateSidebar():Promise<void> {
-
+        
         await expect(this.page.locator(
             '//div[@class="portfolio__sidebar-item"]/a[@href="/testing"]'))
                 .toContainText('Мои инструменты');
